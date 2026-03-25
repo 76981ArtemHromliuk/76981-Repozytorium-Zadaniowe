@@ -18,7 +18,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_76981 }}
         with:
           source-directory: 'zad1_cv'
-          destination-repository-owner: '76981ArtemHromliuk'
+          destination-github-username: '76981ArtemHromliuk'
           destination-repository-name: 'cv-link76981'
           user-email: ahromli1@stu.vistula.edu.pl
           user-name: github-actions
