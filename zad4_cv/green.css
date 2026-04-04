@@ -1,0 +1,97 @@
+     
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #e0e7de;
+            margin: 20px;
+            display: flex;
+    flex-direction: column;
+            align-items: center;
+        }
+
+        header{
+            color: #141c23;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        h1{
+            text-align: center;
+            color: #141c23;
+        }
+
+        section{
+           
+            background-color: #72c65d;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            width: 1000px;
+        }
+
+        h2{
+            display: table; 
+            padding: 10px;
+            color: #ffffff;
+             
+            text-align: center;
+            background-color: #2a4e22;
+            border-radius: 35px; 
+            margin: 0 auto 15px auto;
+        }
+
+        p{
+            padding-left: 50px;
+            line-height: 1;
+        }
+
+        a{
+            color: #1c6377;
+        }
+ 
+        ul{
+         
+            padding-left: 101px;
+        }
+
+        footer{
+            text-align: center;
+            color: #113e06;
+        }
+        
+
+        a:hover{
+            text-decoration: underline;
+        }
+
+         img{
+        display: block;
+        margin: 0 auto;
+        border-radius: 50px;
+        border: 8px solid #ffffff;
+        }
+
+        .top-bar{
+            width:100%;
+            height:75px;
+            background-color: #113e06;
+
+            text-align: center;
+            line-height: 75px;
+            color: white;
+
+            font-family: 'Times New Roman', Times, serif;
+            font-style:italic;
+            font-size: 300%;
+
+            
+        }
+
+        button
+        {
+            padding: 5px 10px;
+            border-width: 5px white;
+            background-color: #335e29;
+            color: white;   
+            cursor: pointer;
+        }
