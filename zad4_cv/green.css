@@ -89,9 +89,16 @@
 
         button
         {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 5px;
             padding: 5px 10px;
-            border-width: 5px white;
+            border: 5px solid white;
             background-color: #335e29;
             color: white;   
             cursor: pointer;
+            font-size: 25px;
+            width: 100px;
+            height: 100px;
         }

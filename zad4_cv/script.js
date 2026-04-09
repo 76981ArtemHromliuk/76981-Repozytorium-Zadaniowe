@@ -1,10 +1,22 @@
-const button = document.getElementById("Button_Styl");
-const theme = document.getElementById("Css_Styl");
+const buttonStyl = document.getElementById("Button_Styl");
+const Styl = document.getElementById("Css_Styl");
+const buttonUkryj = document.getElementById("Button_Ukryj");
+const sekcja = document.getElementById("Sekcja_Kontakt");
 
-button.addEventListener("click", () => {
-    if (theme.getAttribute("href") === "red.css") {
-        theme.setAttribute("href", "green.css");
+buttonUkryj.addEventListener("click", () => {
+    if (sekcja.style.display === "none") {
+        buttonUkryj.textContent="Ukryj sekcję Kontakt";
+        sekcja.style.display = "block";
     } else {
-        theme.setAttribute("href", "red.css");
+        buttonUkryj.textContent="Pokaż sekcję Kontakt";
+        sekcja.style.display = "none";
+    }
+});
+
+buttonStyl.addEventListener("click", () => {
+    if (Styl.getAttribute("href") === "red.css") {
+        Styl.setAttribute("href", "green.css");
+    } else {
+        Styl.setAttribute("href", "red.css");
     }
 });
