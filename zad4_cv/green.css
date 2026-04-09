@@ -87,18 +87,25 @@
             
         }
 
+        .button {    
+            display: flex;
+            gap: 20px;
+            margin-top: 5px;
+            justify-content: flex-start;  
+        }
+        
+
         button
         {
             display: flex;
             gap: 20px;
-            justify-content: center;
             margin-top: 5px;
             padding: 5px 10px;
             border: 5px solid white;
             background-color: #335e29;
             color: white;   
             cursor: pointer;
-            font-size: 25px;
+            font-size: 21px;
             width: 100px;
             height: 100px;
         }
