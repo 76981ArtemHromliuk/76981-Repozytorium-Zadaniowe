@@ -107,3 +107,67 @@
             height: 100px;
         }
           /* 76981 */
+
+            #btnWyslij /* dodałem styl dla pryzciska wyslij uzywa id - 76981 */
+        {
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+
+            text-align: center;
+            
+            margin: 25px auto;
+            border: 2px solid white;
+            background-color: #5e2929;
+
+            color: white;   
+            cursor: pointer;
+
+            font-size: 19px;
+            width: 145px;
+            height: 80px;
+        }
+        input
+        {
+            display: table; 
+            padding: 5px;   
+            color:  #050505;
+            text-align: center;
+            font-weight:bolder ;
+            background-color: #ffabab;
+            margin: 15px 45px ;
+            border-color:#1c6377
+        }
+        
+        textarea
+        {
+            border: 3px #212c2b solid;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            display: table; 
+            padding: 5px;   
+            color:  #050505;
+            text-align: center;
+            background-color: #ffabab;
+            margin: 15px 45px ;
+            resize: none;
+            box-sizing: border-box;
+        }
+        #secInputFormularz
+        {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+ 
+       
+        #idwiadomosc
+        {
+            text-align: left;
+            padding: 35px;
+            width: 500px;
+            height: 250px;
+        }
+
+        
+         /* 76981 */   
