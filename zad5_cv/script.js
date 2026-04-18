@@ -50,7 +50,7 @@ function funcSprawdzenieDanych()
     {
         errortext = "ERROR: Nazwisko nie może zawierać cyfr!";
     }
-    else if (!/^[^\s@] + @ [^\s@] + \. [^\s@] + $/.test(valEmail)) { // uzycie regex do walidacji  email
+    else if (!/^[^\s@]+@[^\s@] +\.[^\s@]+$/.test(valEmail)) { // uzycie regex do walidacji  email
                                                                     // " [^\s@] " = nie musi zawierac symbola @ lub SPACJI (to jest nazwa email)
                                                                     // " + @" następne musi byc symbol @ (n.p: user76981@...) 
                                                                     // po " @ " mam [^\s@] bez " + " bo można używac tylko 1 symbol @
