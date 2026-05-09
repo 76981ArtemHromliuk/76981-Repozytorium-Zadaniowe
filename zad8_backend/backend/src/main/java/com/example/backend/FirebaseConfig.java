@@ -1,6 +1,6 @@
 package com.example.backend;
 
-import java.io.FileInputStream;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 import org.springframework.context.annotation.Configuration;
@@ -19,8 +19,15 @@ public class FirebaseConfig
     {
         try 
         { // wczytanie klucza firebase admin sdk z pliku json 
-            FileInputStream serviceAccount = new FileInputStream("project-715202589180821731-firebase-adminsdk.json");
-          
+           String firebaseJson = System.getenv("project-715202589180821731-firebase-adminsdk");
+           if (firebaseJson == null) {
+                System.out.println("Firebase secret is NULL!");
+                return;
+            }
+             ByteArrayInputStream serviceAccount =
+                    new ByteArrayInputStream(firebaseJson.getBytes());
+
+
             FirebaseOptions options = FirebaseOptions.builder().setCredentials(GoogleCredentials.fromStream(serviceAccount)).build();
 
             if (FirebaseApp.getApps().isEmpty()) 
