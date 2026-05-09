@@ -1,9 +1,7 @@
 package com.example.backend;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,34 +9,47 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.cloud.firestore.Firestore;
+import com.google.firebase.cloud.FirestoreClient;
+
+
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")// pozwala frontendowi łączyć się z backendem
 
 public class Controller 
 {
 
-    @PostMapping("/form")
+    @PostMapping("/form") // Endpoint POST
     public String handleForm(@RequestBody User user) 
     {   
 
         try
         {
-            String data = "\nImię: " + user.name + "\nNazwisko: " + user.surname +"\nEmail: " + user.email +"\nWiadomość: " + user.message;
+            // bazą danych firebase  
+            Firestore BazaDannych = FirestoreClient.getFirestore();
+            // obiekt przechowujący dane
+            Map<String, Object> DaneDB = new HashMap<>();
+            // dodanie danych użytkownika 
+            DaneDB.put("Imię", user.name);
+            DaneDB.put("Nazwisko", user.surname);
+            DaneDB.put("Email", user.email);
+            DaneDB.put("Wiadomość", user.message);
 
-            Files.writeString(Path.of("Dane.txt"), data, StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+        BazaDannych.collection("messages").add(DaneDB);
+
+        System.out.println("Dane zapisane!");
+
+        return "Dane zostały pomyślnie zapisane";
+
 
         } 
-        catch (IOException e) 
+        catch (Exception e) 
         {
             return "Błąd zapisu";
         }
-        
-        System.out.println(user.name);
-        System.out.println(user.surname);
-        System.out.println(user.email);
-        System.out.println(user.message);
-        return "Dane zostały pomyślnie wysłane";
+   
+   
     }
 }
 
