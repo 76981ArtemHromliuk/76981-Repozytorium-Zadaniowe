@@ -16,8 +16,7 @@ const projektyList = document.getElementById("ulProjekty");
 //zad6
 const inpNotatka = document.getElementById("inpNotatka");
 
-console.log("76981");
-
+ 
 
 // zad 4
 buttonUkryj.addEventListener("click", () => {
@@ -163,15 +162,15 @@ function usunNotatke(index)
     const wiadomosc = document.getElementById("idwiadomosc").value;
 
     console.log("BTNWYSLIJ");
-
+    // Wysłanie danych do backendu spring Boot na render
     fetch("https://seven6981-repozytorium-zadaniowe.onrender.com/api/form",
     {
         method: "POST",
-        headers: 
+        headers:  // Wysyłamy dane w formacie json
         {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify
+        body: JSON.stringify  // zamiane danych JavaScript na format json
         ({
             name: imie,
             surname: nazwisko,
@@ -179,6 +178,7 @@ function usunNotatke(index)
             message: wiadomosc
         })
     }
+     // odczyt odpowiedzi tekstowej z backendu, jej wyświetlenie 
     )
     .then(function(backRespons)
     {
@@ -190,4 +190,6 @@ function usunNotatke(index)
         alert("BackEnd: " + Dane);
     })
 }
+
+// https://project-715202589180821731.web.app
 // 76981
